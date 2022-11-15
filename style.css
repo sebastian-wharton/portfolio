@@ -3,7 +3,9 @@ html {
     height: 100%;
     margin: 0;
     padding: 0;
-    
+}
+body {
+    transition: background-color .5s;
 }
 .bg {
     height: 100%;
@@ -25,4 +27,110 @@ p {
     padding: 3px 10px;
     display: inline-block;
     cursor: pointer;
+}
+section {
+    height: 100vh;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+/* Add Gradient */
+h3 {
+    color: #f2f2f2;
+    text-align: left;
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 100%;
+    font-size:xx-large;
+}
+
+.front-text {
+    color: #f2f2f2;
+    opacity: .9;
+    text-align: left;
+    position: absolute;
+    left: 20%;
+    top: 27%;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    
+}
+
+.cards {
+    width: 95%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 5px auto;
+}
+
+.card {
+    border: 1px solid black;
+    height: 250px;
+    width: 200px;
+    margin: 5px;
+    box-shadow: 1px 1px 5px #818181;
+}
+
+.card:hover {
+
+}
+
+.logos img {
+    height: 100px;
+    width: auto;
+    margin: 5px;
 }
