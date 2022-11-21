@@ -1,41 +1,98 @@
+:root {
+    --white: #f2f2f2;
+    --background: #363636;
+    --purple: rgb(123, 31, 162);
+    --violet: rgb(103, 58, 183);
+    --pink: rgb(244, 143, 177);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
 body,
 html {
     height: 100%;
     margin: 0;
-    padding: 0;
 }
+
 body {
+    font-family: "Lato", sans-serif;
     transition: background-color .5s;
 }
+
+
+
+Section {
+    height: 100vh;
+    width: 100vw;
+    background: var(--background);
+}
+/* Front Page */
+.front-page {
+    opacity: 0.1;
+}
+
+.magic-text {
+    position: absolute;
+    top: 190px;
+    left: 35px;
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(to right,
+    var(--purple),
+    var(--violet),
+    var(--pink),
+    var(--purple));
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:
+    transparent;
+    white-space: nowrap;
+}
+
+.non-magic{
+    position: absolute;
+    top: 230px;
+    left: 80px;
+}
+
 .bg {
+    background-image: url(./assets/nasa.jpg)!important;
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("./assets/nasa.jpg");
 }
-p {
-    font-family: "helvetica neue", helvetica, sans-serif;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-align: center;
-    border: 2px solid rgba(0, 0, 200, 0.6);
-    background: rgba(0, 0, 200, 0.3);
-    color: rgba(0, 0, 200, 0.6);
-    box-shadow: 1px 1px 2px rgba(0, 0, 200, 0.4);
-    border-radius: 10px;
-    padding: 3px 10px;
-    display: inline-block;
+
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
+    }
+
+    to {
+        background-position: -200% center;
+    }
+}
+
+/* Nav */
+.span {
+    font-size: 30px;
     cursor: pointer;
+    color: #f2f2f2;
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 10;
 }
-section {
-    height: 100vh;
-}
+
 .sidenav {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 10;
     top: 0;
     left: 0;
     background-color: #111;
@@ -45,16 +102,23 @@ section {
 }
 
 .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: 5px 5px 8px 20px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
     display: block;
     transition: 0.3s;
+    z-index: 10;
 }
 
-.sidenav a:hover {
-    color: #f1f1f1;
+.sidenav a:hover{
+    background-color: #5e5e5e;
+    color: var(--white);
+}
+
+.sidenav a:hover:not(.active) {
+    background-color: #111;
+    color: #ffffff;
 }
 
 .sidenav .closebtn {
@@ -67,7 +131,6 @@ section {
 
 #main {
     transition: margin-left .5s;
-    padding: 16px;
 }
 
 @media screen and (max-height: 450px) {
@@ -80,57 +143,304 @@ section {
     }
 }
 
-/* Add Gradient */
-h3 {
-    color: #f2f2f2;
-    text-align: left;
-    position: absolute;
-    left: 10%;
-    top: 20%;
-    width: 100%;
-    font-size:xx-large;
-}
-
-.front-text {
-    color: #f2f2f2;
-    opacity: .9;
-    text-align: left;
-    position: absolute;
-    left: 20%;
-    top: 27%;
-    width: 100%;
-}
-
-.container {
-    display: flex;
-    align-items: center;
-    
-}
-
-.cards {
-    width: 95%;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
+/* Projects */
+.projects{
     align-items: center;
     justify-content: center;
-    margin: 5px auto;
+    background-color: var(--background);
+    height: auto;
+    margin: 0px;
+    overflow: hidden;
+    padding: 20px 5px;
+}
+
+.projects>h2:nth-child(1){
+    display: flex;
+    margin: 5px;
+    justify-content: center;
+    color: var(--white);
+}
+
+/* Cards */
+.fab {
+    padding-top: 5px;
+}
+
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    max-width: 916px;
+    width: calc(100% - 20px);
+    align-items: center;
+    justify-content: center;
+}
+
+#cards:hover>.card::after {
+    opacity: 1;
 }
 
 .card {
-    border: 1px solid black;
-    height: 250px;
-    width: 200px;
-    margin: 5px;
-    box-shadow: 1px 1px 5px #818181;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    height: 260px;
+    flex-direction: column;
+    position: relative;
+    width: 300px;
+    overflow: hidden;
 }
 
-.card:hover {
+.card:hover::before {
+    opacity: 1;
+}
+
+.card::before,
+.card::after {
+    border-radius: inherit;
+    content: "";
+    height: 100%;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    transition: opacity 500ms;
+    width: 100%;
+}
+
+.card::before {
+    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),
+            rgba(255, 255, 255, 0.06),
+            transparent 40%);
+    z-index: 3;
+    position: relative;
+}
+
+.card::after {
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+            rgba(255, 255, 255, 0.4),
+            transparent 40%);
+    z-index: 1;
+}
+
+.card>.card-content {
+    background-color: rgb(22, 22, 22);
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    inset: 1px;
+    padding: 0px;
+    position: absolute;
+    z-index: 2;
+}
+
+.card-image{
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+    background-position: center;
+    background-size: cover;
+}
+
+/* -- ↓ ↓ ↓ extra card content styles ↓ ↓ ↓ -- */
+
+h1,
+h2,
+h3,
+h4,
+span {
+    color: rgb(240, 240, 240);
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    margin: 0px;
+}
+
+i {
+    color: #f2f2f2;
+}
+
+.card-image {
+    align-items: center;
+    display: flex;
+    height: 140px;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card-image>i {
+    font-size: 6em;
+    opacity: 0.25;
+}
+
+.card-info-wrapper {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-start;
+    padding: 0px 20px;
+    overflow: scroll;
+}
+
+.card-info {
+    align-items: flex-start;
+    display: flex;
+    gap: 5px;
 
 }
 
-.logos img {
-    height: 100px;
+.card-info>i {
+    font-size: 1em;
+    height: 20px;
+    line-height: 20px;
+}
+
+.card-info-title>h3 {
+    font-size: 1.1em;
+    line-height: 20px;
+}
+
+.card-info-title>h4 {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85em;
+    margin-top: 8px;
+}
+
+/* -- ↓ ↓ ↓ some responsiveness ↓ ↓ ↓ -- */
+
+@media(max-width: 1000px) {
+    body {
+        align-items: flex-start;
+        overflow: auto;
+    }
+
+    #cards {
+        max-width: 1000px;
+        padding: 10px 0px;
+    }
+
+    .card {
+        flex-shrink: 1;
+        width: calc(50% - 4px);
+    }
+}
+
+@media(max-width: 500px) {
+    .card {
+        height: 180px;
+    }
+
+    .card-image {
+        height: 80px;
+    }
+
+    .card-image>i {
+        font-size: 3em;
+    }
+
+    .card-info-wrapper {
+        padding: 0px 10px;
+    }
+
+    .card-info>i {
+        font-size: 0.8em;
+    }
+
+    .card-info-title>h3 {
+        font-size: 0.9em;
+    }
+
+    .card-info-title>h4 {
+        font-size: 0.8em;
+        margin-top: 4px;
+    }
+}
+
+@media(max-width: 320px) {
+    .card {
+        width: 100%;
+    }
+}
+
+
+/* About */
+.about{
+    height: auto;
+    padding: 20px auto;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.me-img{
+    height: 200px;
     width: auto;
-    margin: 5px;
+    align-items: center;
+    margin: 10px;
 }
+
+.description{
+    background-color: #a7a7a7;
+    margin: 20px;
+    padding: 10px;
+    width: 40%;
+    height: auto;
+    float: right;
+}
+
+/* Contact */
+.contact{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+form{
+    background-color: rgb(0, 65, 9);
+    display: flex;
+    flex-direction: column;
+    padding: 2vh 4vw;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+form h3{
+    color: rgb(64, 190, 25);
+    font-weight: 800;
+    margin-bottom: 10px;
+    align-self: center;   
+}
+form input, form textarea{
+    border: none;
+    margin: 5px;
+    padding: 15px;
+    outline: none;
+    background: rgb(64, 190, 25);
+    font-size: 16px;
+}
+form button{
+    padding: 15px;
+    background: #000;
+    color: rgb(64, 190, 25);
+    font-size: 18px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    width: 150px;
+    margin: 20px;
+    border-radius: 30px;
+    align-self: center;
+}
+
+
+
+
