@@ -1,44 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./style.css" rel="stylesheet" />
-    <script src="./script.js" defer></script>
-    <link rel="icon" type="image/x-icon" href="./assets/favicon.svg" />
-    <title>Portfolio</title>
-  </head>
-  <body>
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-        >&times;</a
-      >
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div class="bg">
-      <section class="front-page"></section>
-      <div id="main">
-        <span class="span" onclick="openNav()">&#9776;</span>
-        <h1 class="magic-text">Sebastian Wharton</h1>  <h1 class="non-magic">Front End Engineer</h1>
-          
-        <!-- Projects -->
-        <section class="projects" id="projects">
-          <div class="title">
-          <h2>Projects</h2></div>
-        <div id="cards">
-      <div class="card">
-        <div class="card-content">
-          <div class="card-image">
-            <img src="./assets/React_logo.png" alt="React Project">
-          </div>
-          <div class="card-info-wrapper">
-            <div class="card-info">
-              <div class="project-image"></div>
-              <div class="icons">
-                <i
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<link
+			href="./style.css"
+			rel="stylesheet"
+		/>
+		<script
+			src="./script.js"
+			defer
+		></script>
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="./assets/favicon.svg"
+		/>
+		<
+		<script
+			src="https://kit.fontawesome.com/dcac9045a7.js"
+			crossorigin="anonymous"
+		></script>
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Portfolio</title>
+	</head>
+	<body>
+		<nav id="mySidenav">
+			<a
+				href="javascript:void(0)"
+				class="closebtn"
+				onclick="closeNav()"
+				>&times;</a
+			>
+			<a href="#projects">Projects</a>
+			<a href="#about">About</a>
+			<a href="#contact">Contact</a>
+		</nav>
+		<div class="content-wrapper">
+			<div id="main">
+				<section class="front-page">
+					<span
+						class="span"
+						onclick="openNav()"
+						>&#9776;</span
+					>
+					<h1 class="gradient">Sebastian Wharton</h1>
+					<h1 class="non-gradient">Front End Web Developer</h1>
+				</section>
+				<!-- Projects -->
+				<section
+					class="projects"
+					id="projects"
+				>
+					<h2>Projects</h2>
+          <div class="container">
+					<div id="cards">
+						<div class="card">
+							<div class="card-content">
+								<div class="card-image">
+									<i class="fa-duotone fa-apartment"></i>
+								</div>
+								<div class="card-info-wrapper">
+									<div class="card-info">
+										<i
                   class="fa-solid fa-code --fa-border-padding"
                   style="font-size: x-large; color: #f2f2f2"
                 ></i>
@@ -46,27 +102,20 @@
                   class="fab fa-github"
                   style="font-size: xx-large; color: #f2f2f2"
                 ></i>
-              </div>
-              <div class="card-info-title">
-                <h3>React CRUD App</h3>
-                <h4>
-                  To-do list application that persists data to local storage.
-                </h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-content">
-          <div class="card-image">
-                        <img src="./assets/React_logo.png" alt="React Project">
-
-          </div>
-          <div class="card-info-wrapper">
-            <div class="card-info">
-              <div class="icons">
-                <i
+										<div class="card-info-title">
+											<h3>Apartments</h3>
+											<h4>
+												Places to be apart. Wait, what?
+											</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-content">
+								<div class="card-image">
+									<i
                   class="fa-solid fa-code --fa-border-padding"
                   style="font-size: x-large; color: #f2f2f2"
                 ></i>
@@ -74,29 +123,10 @@
                   class="fab fa-github"
                   style="font-size: xx-large; color: #f2f2f2"
                 ></i>
-              </div>
-              <div class="card-info-title">
-                <h3>Next.js E-Commerce App</h3>
-
-                <h4>
-                  Allows users to create an account (authenticated), purchase
-                  products by filtering store index (database content), add
-                  selected items to their cart, and checking out via Stripe API.
-                </h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-content">
-          <div class="card-image">
-                       <img src="./assets/React_logo.png" alt="React Project">
-          </div>
-          <div class="card-info-wrapper">
-            <div class="card-info">
-              <div class="icons">
-                <i
+								</div>
+								<div class="card-info-wrapper">
+									<div class="card-info">
+										<i
                   class="fa-solid fa-code --fa-border-padding"
                   style="font-size: x-large; color: #f2f2f2"
                 ></i>
@@ -104,29 +134,45 @@
                   class="fab fa-github"
                   style="font-size: xx-large; color: #f2f2f2"
                 ></i>
-              </div>
-              <div class="card-info-title">
-                <h3>Weather App</h3>
-                <h4>
-                  Practice project that taught me how to connect to an API in
-                  vanilla JS. I learned how to connect to an API using the
-                  following methods: XHR, fetch, and jQuery
-                </h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-content">
-          <div class="card-image">
-                      <img src="./assets/React_logo.png" alt="React Project">
-
-          </div>
-          <div class="card-info-wrapper">
-            <div class="card-info">
-              <div class="icons">
-                <i
+										<div class="card-info-title">
+											<h3>Unicorns</h3>
+											<h4>
+												A single corn. Er, I mean horn.
+											</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-content">
+								<div class="card-image">
+									<i class="fa-duotone fa-blender-phone"></i>
+								</div>
+								<div class="card-info-wrapper">
+									<div class="card-info">
+										<i
+                    class="fa-solid fa-code --fa-border-padding"
+                    style="font-size: x-large; color: #f2f2f2"></i>
+                  <i
+                    class="fab fa-github"
+                    style="font-size: xx-large; color: #f2f2f2"
+                  ></i>
+										<div class="card-info-title">
+											<h3>Blender Phones</h3>
+											<h4>
+												These absolutely deserve to
+												exist.
+											</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-content">
+								<div class="card-image">
+									<i
                   class="fa-solid fa-code --fa-border-padding"
                   style="font-size: x-large; color: #f2f2f2"
                 ></i>
@@ -134,28 +180,10 @@
                   class="fab fa-github"
                   style="font-size: xx-large; color: #f2f2f2"
                 ></i>
-              </div>
-              <div class="card-info-title">
-                <h3>Rest API using Node.js, Express, & Mongo.db</h3>
-                <h4>
-                  Created an Express server, Connected to Mongodb database,
-                  Configured REST API routes, and enabled validation rules.
-                </h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-content">
-          <div class="card-image">
-                        <img src="./assets/React_logo.png" alt="React Project">
-
-          </div>
-          <div class="card-info-wrapper">
-            <div class="card-info">
-              <div class="icons">
-                <i
+								</div>
+								<div class="card-info-wrapper">
+									<div class="card-info">
+										<i
                   class="fa-solid fa-code --fa-border-padding"
                   style="font-size: x-large; color: #f2f2f2"
                 ></i>
@@ -163,25 +191,18 @@
                   class="fab fa-github"
                   style="font-size: xx-large; color: #f2f2f2"
                 ></i>
-              </div>
-              <div class="card-info-title">
-                <h3>IDK</h3>
-                <h4>...yet.</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-content">
-          <div class="card-image">
-                       <img src="./assets/React_logo.png" alt="React Project">
-
-          </div>
-          <div class="card-info-wrapper">
-            <div class="card-info">
-              <div class="icons">
-                <i
+										<div class="card-info-title">
+											<h3>Adios</h3>
+											<h4>See you...</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-content">
+								<div class="card-image">
+									<i
                   class="fa-solid fa-code --fa-border-padding"
                   style="font-size: x-large; color: #f2f2f2"
                 ></i>
@@ -189,63 +210,108 @@
                   class="fab fa-github"
                   style="font-size: xx-large; color: #f2f2f2"
                 ></i>
-              </div>
-              <div class="card-info-title">
-                <h3>Portfolio</h3>
-                <h4>
-                  I created this simple web page created with HTML, CSS, and
-                  JavaScript; the holy trinity of web design
-                </h4>
-              </div>
-            </div>
-          </div>
+								</div>
+								<div class="card-info-wrapper">
+									<div class="card-info">
+										<i
+                  class="fa-solid fa-code --fa-border-padding"
+                  style="font-size: x-large; color: #f2f2f2"
+                ></i>
+                <i
+                  class="fab fa-github"
+                  style="font-size: xx-large; color: #f2f2f2"
+                ></i>
+										<div class="card-info-title">
+											<h3>I mean hello</h3>
+											<h4>...over here.</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-content">
+								<div class="card-image">
+									<i class="fa-duotone fa-otter"></i>
+								</div>
+								<div class="card-info-wrapper">
+									<div class="card-info">
+										<i class="fa-duotone fa-otter"></i>
+										<div class="card-info-title">
+											<h3>Otters</h3>
+											<h4>
+												Look at me, imma cute lil fella.
+											</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
         </div>
-      </div>
-    </div>
-        </section>
-        <!-- About -->
-        <section class="about" id="about">
-          <div class="title">
-          <h2>About</h2></div>
-          <img src="./assets/me.jpg" alt="profile photo" class="me-img">
-          <aside class="description">Brief Introduction - Who are you and what do you do? What have you accomplished? And what are you aspiring to do?</aside>
-
-        </section>
-        <!-- Contact -->
-        <section class="contact" id="contact">
-          <form action="https://formspree.io/f/mgeqqqaz" method="POST">
-            <h3>Contact</h3>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Name"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email"
-              required
-            />
-            <input
-              type="text"
-              name="phone"
-              id="phone"
-              placeholder="Phone Number"
-            />
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              placeholder="Message"
-            ></textarea>
-            <button type="submit">Send</button>
-          </form>
-        </section>
-        </div>
-      </div>
-    </div>
-  </body>
+				</section>
+				<!-- About -->
+				<section
+					class="about"
+					id="about"
+				>
+					<h2>About</h2>
+					<img
+						src="./assets/me.jpg"
+						alt="profile photo"
+						class="me-img"
+					/>
+					<aside class="description">
+						Brief Introduction - Who are you and what do you do?
+						What have you accomplished? And what are you aspiring to
+						do?
+					</aside>
+				</section>
+				<!-- Contact -->
+				<section
+					class="contact"
+					id="contact"
+				>
+					<form
+						action="https://formspree.io/f/mgeqqqaz"
+						method="POST"
+					>
+						<h3>Contact</h3>
+						<input
+							type="text"
+							name="name"
+							id="name"
+							placeholder="Name"
+							required
+						/>
+						<input
+							type="email"
+							name="email"
+							id="email"
+							placeholder="Email"
+							required
+						/>
+						<input
+							type="text"
+							name="phone"
+							id="phone"
+							placeholder="Phone Number"
+						/>
+						<textarea
+							id="message"
+							name="message"
+							rows="4"
+							placeholder="Message"
+						></textarea>
+						<button
+							type="submit"
+							class="submit"
+						>
+							Send Message
+						</button>
+					</form>
+				</section>
+			</div>
+		</div>
+	</body>
 </html>
